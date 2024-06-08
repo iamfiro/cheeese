@@ -1,23 +1,9 @@
-// import { Header } from "../components";
-// function RegisterPage() {
-//     return (
-//         <>
-//         <Header>
-//             <Header.Logo />
-//             <button>로그인 및 가입</button>
-//         </Header>
-//         <main>
-            
-//         </main>
-//         </>
-//     );
-// }
-
-// export default RegisterPage;
 import { useForm } from "react-hook-form";
 import { getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {getDatabase, ref, set} from 'firebase/database';
 import app from "../lib/firebase";
+import style from '../styles/auth.module.scss';
+import { Logo } from "../components/Header";
 
 function RegisterPage() {
     const {
@@ -59,12 +45,14 @@ function RegisterPage() {
     };
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="email">Email</label>
+        <div className={style.container}>
+            <form onSubmit={handleSubmit(onSubmit)} className={style.left}>
+                <Logo />
+                <label htmlFor="email" className={style.label}>Email</label>
                 <input
                     type="email"
                     id="email"
+                    className={style.input}
                     {...register('email', {
                         required: true,
                         pattern: /^\S+@\S+$/i
@@ -72,10 +60,11 @@ function RegisterPage() {
                 />
                 {errors.email && <p>이메일이 잘못되었습니다!</p>}
 
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className={style.label}>Password</label>
                 <input
                     type="password"
                     id="password"
+                    className={style.input}
                     {...register('password', {
                         required: true,
                         minLength: 6,
@@ -86,8 +75,9 @@ function RegisterPage() {
                 {errors.password && errors.password.type === 'minLength' && <p>비밀번호는 최소 6자 이상이어야 합니다!</p>}
                 {errors.password && errors.password.type === 'maxLength' && <p>비밀번호는 최대 20자 이하여야 합니다!</p>}
 
-                <input type="submit" value="Register"/>
+                <input type="submit" value="Register"  className={style.submit}/>
             </form>
+            <img src="https://i.ibb.co/m6ChvKv/Snapinsta-app-447444002-431135383039644-5576725662747987961-n-1080.jpg" className={style.right} />
         </div>
     );
 }

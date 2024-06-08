@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import style from './style.module.scss';
 import SampleLogo from '../../assets/react.svg';
 
-function Logo() {
+export function Logo() {
     return (
         <img src={SampleLogo} alt="Logo" height={30} />
     );

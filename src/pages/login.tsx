@@ -1,22 +1,9 @@
-// import { Header } from "../components";
-// function LoginPage() {
-//     return (
-//         <>
-//         <Header>
-//             <Header.Logo />
-//             <button>로그인 및 가입</button>
-//         </Header>
-//         <main>
-            
-//         </main>
-//         </>
-//     );
-// }
+import style from '../styles/auth.module.scss';
 
-// export default LoginPage;
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from "../lib/firebase";
 import { useState } from 'react';
+import { Logo } from '../components/Header';
 
 function LoginPage() {
     const [email, setEmail] = useState('');
@@ -45,16 +32,19 @@ function LoginPage() {
 
     return (
         <>
-        
-            <form onSubmit={onSubmit}>
-                <label htmlFor="email">Email</label>
-                <input value={email} onChange={emailChange} type="email" id="_email" required />
+        <div className={style.container}>
+            <form onSubmit={onSubmit} className={style.left}>
+                <Logo />
+                <label htmlFor="email" className={style.label}>Email</label>
+                <input value={email} onChange={emailChange} className={style.input} type="email" id="_email" required />
 
-                <label htmlFor="password">Password</label>
-                <input value={password} onChange={passwordChange} type="password" id="_password" required />
+                <label htmlFor="password" className={style.label}>Password</label>
+                <input value={password} onChange={passwordChange} className={style.input} type="password" id="_password" required />
 
-                <button type="submit">Login</button>
+                <button type="submit" className={style.submit}>Login</button>
             </form>
+            <img src="https://i.ibb.co/mN23SKw/pawel-czerwinski-A3-Dy-YLGO0k-Q-unsplash.jpg" className={style.right} />
+        </div>
         </>
     );
 }
