@@ -1,8 +1,24 @@
 @import url('https://fastly.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
 
 :root {
-    --color-border: #e4e8e8;
+    // Colors
+    --color-white: #fff;
+    --color-black: #000;
+    --color-charcoal: #333;
+
+    --color-gray: #5C6B82;
+    --color-gray-light: #cbcbcb;
+    --color-gray-lighter: #dcdcdc;
+    --color-gray-lightest: #e9e9e9;
+
     --color-text: #8A8A8A;
+
+    // Border radius
+    --border-radius: 8px;
+    --border-radius-s: 4px;
+
+    --color-border: #e4e8e8;
+    
 }
 
 body, html {
