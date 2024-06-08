@@ -125,3 +125,29 @@
 
     color: var(--color-gray);
 }
+
+.fileInput {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 0;
+}
+
+.previewContainer {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--color-gray-lightest);
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    .preview {
+        width: 80%;
+    }
+}
