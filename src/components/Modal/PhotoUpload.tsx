@@ -5,7 +5,7 @@ function PhotoUploadModal() {
     return (
         <Modal.Backdrop>
             <Modal>
-            <Modal.Top icon={<FiUpload />} color="#2fcc88">사진 업로드</Modal.Top>
+                <Modal.Top icon={<FiUpload />} color="#2fcc88">사진 업로드</Modal.Top>
             </Modal>
         </Modal.Backdrop>
     );
