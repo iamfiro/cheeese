@@ -4,8 +4,8 @@ import ProfilePage from "./pages/profile";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import ModalRouter from "./components/Modal/router";
-import PhotoUpload from "./components/Modal/PhotoUpload.tsx";
-import DetailPage from "./pages/detail.tsx";
+import LogoutPage from "./pages/logout";
+
 
 function App() {
 	return (
@@ -15,8 +15,7 @@ function App() {
                 <Route path="/" element={<ProfilePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-                <Route path="/photoupload" element={<PhotoUpload/>}/>
-                <Route path="/image/:id" element={<DetailPage/>}/>
+                <Route path="/logout" element={<LogoutPage />} />
             </Routes>
             <ModalRouter />
         </BrowserRouter>
